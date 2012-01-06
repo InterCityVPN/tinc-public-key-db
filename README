@@ -1,0 +1,32 @@
+= tinc public key db for the InterCityVPN =
+
+Also see: http://wiki.freifunk.net/IC-VPN
+
+The InterCityVPN is a network inter connecting various cities'
+open mesh networks via tinc and Quagga-BGP.
+
+This repository gathers various tinc public keys usable
+for peering as well as according signatures. The goal is to
+be able to update peerings in an automized fashion.
+
+To be able to do this in a secure way you are advised to add
+your tinc public keys with a gpg signature next to it as there
+might be users having write access to this repository who you do not
+know/trust.
+
+
+= TODOs =
+
+Which format for the signatures? We should probably agree on
+something to make it easy for scripts to find signature files
+belonging to a certain tinc public key.
+
+Every signature should be stored in a separate file to avoid
+merge conflicts.
+
+For instance: [tinc-hostname].sig for the owner's signature,
+and [tinc-hostname-A]->[tinc-hostname-B].sig for A's signature of B's
+tinc public key?
+
+Or better building the web-of-trust via gpg key signatures
+instead of file signatures?
